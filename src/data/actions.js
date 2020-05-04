@@ -1,5 +1,54 @@
 import CALC_ACTION_TYPES from "./actionTypes";
 
+// *** MEMORY ***//
+export const memoryAdd = () => ({ type: CALC_ACTION_TYPES.MEMORY_ADD });
+
+export const memoryClear = () => ({ type: CALC_ACTION_TYPES.MEMORY_CLEAR });
+
+export const memoryMinus = () => ({ type: CALC_ACTION_TYPES.MEMORY_MINUS });
+
+// export const changeDisplayValue = (value) => ({
+// 	type: CALC_ACTION_TYPES.CHANGE_DISPLAY_VALUE,
+// 	value,
+// });
+
+export const memoryRead = (value) => ({
+	type: CALC_ACTION_TYPES.MEMORY_READ,
+	value: value,
+});
+
+export const memorySet = () => ({ type: CALC_ACTION_TYPES.MEMORY_SET });
+
+// *** SPECIAL FUNCTIONS *** //
+
+export const clear = () => ({ type: CALC_ACTION_TYPES.CALC_CLEAR });
+
+export const cancel = () => ({ type: CALC_ACTION_TYPES.CALC_CANCEL });
+
+export const invertNumber = () => ({
+	type: CALC_ACTION_TYPES.CALC_INVERT_NUMBER,
+});
+
+export const addComma = () => ({ type: CALC_ACTION_TYPES.CALC_ADD_COMMA });
+
+export const back = () => ({ type: CALC_ACTION_TYPES.CALC_BACK });
+
+export const equal = () => ({ type: CALC_ACTION_TYPES.CALC_EQUAL });
+
+export const callSpecialFunction = (value) => ({
+	type: CALC_ACTION_TYPES.CALC_CALL_SPECIAL_FUNCTION,
+	value,
+});
+
+export const getValuesToCalculations = (value) => ({
+	type: CALC_ACTION_TYPES.FUNC_GET_VALUES_TO_CALCULATIONS,
+	value,
+});
+
+export const addToHistory = (payload) => ({
+	type: CALC_ACTION_TYPES.HISTORY_CREATE,
+	payload,
+});
 // const {
 // 	displayValue,
 // 	historyDisplay,
@@ -96,43 +145,4 @@ import CALC_ACTION_TYPES from "./actionTypes";
 
 // const percent = () => {
 // 	callSpecialFunction((previousValue * displayValue) / 100);
-// };
-
-// const attachFunctionToButton = (button) => {
-// 	if (button.className.includes("calculator__button--is-number")) {
-// 		dispatch({ type: actions.CONCATENATE_NUMBER, payload: button.content });
-// 	}
-
-// 	switch (button.id) {
-// 		case "js-percent":
-// 			return percent();
-// 		case "js-cancel":
-// 			return cancel();
-// 		case "js-clear":
-// 			return clear();
-// 		case "js-back":
-// 			return back();
-// 		case "js-fraction":
-// 			return fraction();
-// 		case "js-power":
-// 			return power();
-// 		case "js-square":
-// 			return square();
-// 		case "js-divide":
-// 			return console.log("divide");
-// 		case "js-multiply":
-// 			return console.log("multiply");
-// 		case "js-subtraction":
-// 			return console.log("subtraction");
-// 		case "js-addition":
-// 			return console.log("addition");
-// 		case "js-invert":
-// 			return invertNumber();
-// 		case "js-comma":
-// 			return addComma();
-// 		case "js-equal":
-// 			return console.log("equal");
-// 		default:
-// 			console.log("no function");
-// 	}
 // };
