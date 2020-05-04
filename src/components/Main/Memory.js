@@ -1,23 +1,19 @@
 import React from "react";
+import { memoryButtons } from "./data";
+import Button from "./Button";
 
-const Memory = () => {
+const Memory = ({ attachFunctionToButton }) => {
 	return (
 		<div className='calculator__memory-row'>
-			<div className='calculator__memory-button' id='js-MC'>
-				MC
-			</div>
-			<div className='calculator__memory-button' id='js-MR'>
-				MR
-			</div>
-			<div className='calculator__memory-button' id='js-M+'>
-				M+
-			</div>
-			<div className='calculator__memory-button' id='js-M-'>
-				M-
-			</div>
-			<div className='calculator__memory-button' id='js-MS'>
-				MS
-			</div>
+			{memoryButtons.map((button) => (
+				<Button
+					key={button.id}
+					id={button.id}
+					className={button.className}
+					handleClick={() => attachFunctionToButton(button)}>
+					{button.content}
+				</Button>
+			))}
 		</div>
 	);
 };
